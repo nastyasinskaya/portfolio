@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дизайн-система Astra (МТС Финтех) — Анастасия Ясинская</title>
+  <meta name="description" content="Как мы превратили разрозненные UI-киты в единую дизайн-систему для 42 продуктовых команд МТС Финтех.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="case-header.css">
+</head>
+<body>
+
+  <div class="bg-ambient"></div>
+
+  <!-- Шапка кейса: закреплена сверху, стеклянная (стили — case-header.css) -->
+  <header class="chead">
+    <div class="chead__inner">
+      <div class="chead__author">
+        <a class="chead__btn chead__btn--icon" href="index.html" aria-label="На главную">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m0 0 6-6m-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <img class="chead__avatar" src="images/portrait.jpg" alt="">
+        <p class="chead__name">Анастасия<br>Ясинская</p>
+      </div>
+      <div class="chead__actions">
+        <a class="chead__btn chead__btn--dark" href="https://t.me/mooonseen" target="_blank" rel="noopener noreferrer">
+          TELEGRAM
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 4.5 3.8 10.8c-.9.35-.9 1.6.02 1.9l3.98 1.3 1.6 4.9c.25.78 1.24 1 1.8.4l2.2-2.3 4 2.95c.6.44 1.45.11 1.6-.62L21.4 5.9c.2-.92-.6-1.7-1.4-1.4Z" fill="currentColor"/><path d="m8 14 9-6.2-6.6 7.4" stroke="#1d1d1f" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="chead__btn" href="mailto:ayasinskayawork@gmail.com">E-MAIL</a>
+        <a class="chead__btn" href="cv-anastasia-yasinskaya.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main">
+    <div class="container">
+
+      <!-- 01. Обложка -->
+      <section class="case-hero">
+        <p class="case-hero__eyebrow">Senior Product Designer / Design System · МТС Финтех</p>
+        <h1 class="case-hero__title">Дизайн-система Astra (МТС Финтех)</h1>
+        <p class="case-hero__subtitle">
+          Как мы превратили разрозненные UI-киты в единую систему для 42 продуктовых команд
+        </p>
+
+        <div class="case-hero__visual">
+          <video class="case-hero__video" src="videos/hero-demo.mp4" autoplay muted loop playsinline></video>
+          <span class="case-hero__visual-label">Design System · iOS · Android (Compose/Native) · Web (React)</span>
+        </div>
+      </section>
+
+      <!-- 02. Контекст -->
+      <section class="case-block">
+        <p class="case-section__eyebrow">Контекст</p>
+        <h2 class="case-section__title">Когда я пришла в&nbsp;дизайн-систему</h2>
+
+        <div class="case-text">
+          <p style="max-width:680px;">Единой системы для&nbsp;банка фактически не&nbsp;существовало. МТС Финтех — цифровой банк внутри экосистемы МТС. 42 продуктовые команды параллельно развивают мобильный банк (Android, iOS) и&nbsp;веб-платформу.</p>
+
+          <figure class="case-figure">
+            <img src="images/ecosystem-map.png" alt="Карта продуктовых команд и платформ экосистемы МТС с уровнем использования дизайн-системы" class="case-figure__img js-zoomable" draggable="false">
+            <figcaption class="case-figure__caption">Сводка по продуктовым командам МТС Финтех</figcaption>
+          </figure>
+
+          <p class="case-text__subhead">13 UI-китов в&nbsp;дизайне</p>
+          <p>Разные продуктовые команды использовали собственные UI-киты, компоненты и&nbsp;подходы к&nbsp;проектированию. Один и&nbsp;тот же элемент мог выглядеть и&nbsp;вести себя по-разному в&nbsp;зависимости от&nbsp;продукта, а&nbsp;изменения приходилось поддерживать сразу в&nbsp;нескольких местах.</p>
+
+          <p class="case-text__subhead">Каждая команда — свой код</p>
+          <p>В&nbsp;разработке ситуация была похожей: компоненты дублировались между командами и&nbsp;платформами, а&nbsp;единого source of truth не&nbsp;было.</p>
+
+          <p class="case-text__subhead">Adoption — менее 10%</p>
+          <p>На&nbsp;тот момент дизайн-системой от&nbsp;экосистемы МТС пользовались только<br>4&nbsp;команды из&nbsp;42.</p>
+        </div>
+
+        <div class="chaos-badges">
+          <span class="chaos-badge chaos-badge--purple" style="--rot:-4deg; --delay:0ms;">13 UI-китов</span>
+          <span class="chaos-badge chaos-badge--red" style="--rot:3deg; --delay:70ms;">хаос</span>
+          <span class="chaos-badge chaos-badge--blue" style="--rot:-6deg; --delay:140ms;">разные правила</span>
+          <span class="chaos-badge chaos-badge--green" style="--rot:5deg; --delay:210ms;">дублирование</span>
+          <span class="chaos-badge chaos-badge--pink" style="--rot:-2deg; --delay:280ms;">нет источника правды</span>
+          <span class="chaos-badge chaos-badge--amber chaos-badge--egg js-zoomable" style="--rot:4deg; --delay:350ms;" role="button" tabindex="0" data-lightbox-src="images/easter-15-buttons.png" data-lightbox-alt="15 разных кнопок в дизайне и коде — 13 китов">100500 версий одной кнопки</span>
+          <span class="chaos-badge chaos-badge--indigo" style="--rot:-5deg; --delay:420ms;">уставшие разработчики</span>
+          <span class="chaos-badge chaos-badge--cyan" style="--rot:2deg; --delay:490ms;">вымотанные дизайнеры</span>
+        </div>
+      </section>
+
+      <!-- 03. Моя роль -->
+      <section class="case-block case-block--dark">
+        <p class="case-section__eyebrow">Моя роль</p>
+        <h2 class="case-section__title">Зона ответственности</h2>
+        <div class="role-layout">
+        <div class="case-text">
+          <p>В команде я отвечала за дизайн-направление и развитие дизайн-системы на уровне компонентов, паттернов и пользовательского опыта. Моя работа находилась на стыке дизайна и разработки: от исследования потребностей продуктовых команд и проектирования компонентов в Figma — до их реализации, документации и фронт-ревью.</p>
+          <p>Помимо развития самой библиотеки, я занималась внедрением системы в команды, обучением дизайнеров и созданием внутренних инструментов и материалов, которые помогали использовать ДС в ежедневной работе.</p>
+        </div>
+
+        <ol class="role-timeline">
+          <li class="role-timeline__item">
+            <p class="role-timeline__title">Senior Product Designer</p>
+            <p class="role-timeline__date">26.02.2024 – 25.03.2026</p>
+          </li>
+          <li class="role-timeline__item">
+            <p class="role-timeline__title">Руководитель направления «Дизайн-система»</p>
+            <p class="role-timeline__date">25.03.2026 – по&nbsp;настоящее время</p>
+            <p class="role-timeline__text">В&nbsp;управлении команда из&nbsp;8&nbsp;специалистов:</p>
+            <ul class="role-timeline__list">
+              <li>Senior Designer</li>
+              <li>Senior Android-разработчик</li>
+              <li>Senior iOS-разработчик</li>
+              <li>Lead Web-разработки</li>
+              <li>Senior Web-разработчик</li>
+              <li>QA-инженер</li>
+              <li>Lead 3D-дизайнер</li>
+              <li>3D-дизайнер</li>
+            </ul>
+          </li>
+        </ol>
+        </div>
+
+        <div class="case-zones">
+          <div class="case-zone">
+            <p class="case-zone__num">01</p>
+            <p class="case-zone__title">Компоненты</p>
+            <p class="case-zone__desc">Проектирование в&nbsp;Figma компонентов для&nbsp;App (iOS/Android) и&nbsp;Web</p>
+          </div>
+          <div class="case-zone">
+            <p class="case-zone__num">02</p>
+            <p class="case-zone__title">Фронт-ревью и&nbsp;QA</p>
+            <p class="case-zone__desc">Общение с&nbsp;разработчиками, контроль над&nbsp;реализацией компонентов в&nbsp;коде, тестирование и&nbsp;фронт-ревью</p>
+          </div>
+          <div class="case-zone">
+            <p class="case-zone__num">03</p>
+            <p class="case-zone__title">Документация</p>
+            <p class="case-zone__desc">Написание спецификаций, гайдов, запись видео и&nbsp;формирование обучающих материалов</p>
+          </div>
+          <div class="case-zone">
+            <p class="case-zone__num">04</p>
+            <p class="case-zone__title">Адаптация</p>
+            <p class="case-zone__desc">Онбординг для&nbsp;дизайнеров, постоянная поддержка и&nbsp;консультирование, ответы на&nbsp;вопросы и&nbsp;созвоны</p>
+          </div>
+          <div class="case-zone">
+            <p class="case-zone__num">05</p>
+            <p class="case-zone__title">Коммуникация</p>
+            <p class="case-zone__desc">Введение телеграм-канала с&nbsp;новостями о&nbsp;ДС; регулярное проведение демо ДС раз в&nbsp;2&nbsp;недели</p>
+          </div>
+          <div class="case-zone">
+            <p class="case-zone__num">06</p>
+            <p class="case-zone__title">Развитие дизайн-комьюнити</p>
+            <p class="case-zone__desc">Проведение мероприятий для&nbsp;дизайнеров, инициирование активностей (например, создала цифровой адвент-календарь в&nbsp;подарок дизайнерам)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04. Три фазы трансформации -->
+      <section class="case-block case-block--phases">
+        <p class="case-section__eyebrow">От хаоса к&nbsp;системе</p>
+        <h2 class="case-section__title">Три фазы трансформации</h2>
+        <div class="case-text">
+          <p>Задача была не&nbsp;просто «сделать библиотеку компонентов», а&nbsp;построить инфраструктурный продукт, которым будет пользоваться весь банк. Мы двигались поэтапно, давая командам ценность на&nbsp;каждом шаге.</p>
+        </div>
+
+        <div class="phase-timeline js-phase-timeline">
+          <div class="phase-timeline__track"><div class="phase-timeline__progress"></div></div>
+
+          <div class="phase">
+            <div class="phase__aside">
+              <span class="phase__dot"></span>
+              <p class="phase__label">Фаза 1</p>
+            </div>
+            <div class="phase__body">
+              <p class="phase__label phase__label--mobile">Фаза 1</p>
+              <h3 class="phase__title">Построить единую кодовую базу</h3>
+              <p class="phase__text">Первый приоритет — убрать хаос. Совместно с&nbsp;продуктовыми командами мы начали переход на&nbsp;существующую дизайн-систему Granat от&nbsp;МТС. Цель этого этапа — не&nbsp;идеальная ДС, а&nbsp;единая точка входа: одна кодовая база вместо тринадцати.</p>
+            </div>
+          </div>
+
+          <div class="phase">
+            <div class="phase__aside">
+              <span class="phase__dot"></span>
+              <p class="phase__label">Фаза 2</p>
+            </div>
+            <div class="phase__body">
+              <p class="phase__label phase__label--mobile">Фаза 2</p>
+              <h3 class="phase__title">Своя дизайн-система</h3>
+              <p class="phase__text">Стратегическое решение: не&nbsp;форкать, а&nbsp;строить поверх. Мы взяли Granat как основу — единый стиль, единый визуальный язык экосистемы МТС — и&nbsp;на&nbsp;этом фундаменте начали создавать собственные финтех-компоненты. Так родилась дизайн-система ASTRA.</p>
+            </div>
+          </div>
+
+          <div class="phase">
+            <div class="phase__aside">
+              <span class="phase__dot"></span>
+              <p class="phase__label">Фаза 3</p>
+            </div>
+            <div class="phase__body">
+              <p class="phase__label phase__label--mobile">Фаза 3</p>
+              <h3 class="phase__title">Что дальше? Мультиплатформенность</h3>
+              <p class="phase__text">Мы спроектировали и&nbsp;реализовали более 200 компонентов, в&nbsp;том числе специфичные для&nbsp;банковского продукта: сложные формы, финансовые виджеты, графики, карточные продукты, верификация и&nbsp;другие паттерны.</p>
+              <p class="phase__text">Следующий шаг: сделать жизнь ещё проще и&nbsp;свести различия между платформами к&nbsp;минимуму. Один компонент на&nbsp;все платформы. Одинаковая реализация.</p>
+            </div>
+          </div>
+        </div>
+
+        <figure class="phases-figure">
+          <img src="images/components-by-platform.png" alt="Реализованные компоненты по платформам: Web — 109, Android — 101 (96 Compose-компонентов), iOS — 87, дизайн в Figma — 224" class="phases-figure__img js-zoomable" draggable="false">
+        </figure>
+
+        <!-- Three Android phone mockups (screens 1080×2400, 9:20). -->
+        <div class="devices">
+          <div class="device">
+            <div class="device__screen">
+              <span class="device__camera"></span>
+              <img src="images/phone-cashback.webp" alt="Экран кешбэка и бонусов: 1 500 ₽ получено в феврале, обмен кешбэка на рубли, бонусы за накопления" class="device__img" draggable="false">
+            </div>
+          </div>
+          <div class="device">
+            <div class="device__screen">
+              <span class="device__camera"></span>
+              <img src="images/phone-salary-card.webp" alt="Экран «Преимущества зарплатной карты»: категории кешбэка, надбавка к ставке, лимиты, снятие наличных" class="device__img" draggable="false">
+            </div>
+          </div>
+          <div class="device">
+            <div class="device__screen">
+              <span class="device__camera"></span>
+              <img src="images/phone-benefit.webp" alt="Экран «Ваша выгода»: 1 500 ₽ в сентябре, график по месяцам, начисления за сегодня" class="device__img" draggable="false">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05. Dark Theme -->
+      <section class="case-block case-block--black" id="dark-theme">
+        <img src="images/android-mascot.png" alt="" class="case-dark-mascot" aria-hidden="true">
+        <p class="case-section__eyebrow">Dark Theme</p>
+        <h2 class="case-section__title">Сделали тёмную тему для банка</h2>
+        <p class="case-section__subtitle">Как мы с мобильными разработчиками сделали тёмную тему для приложения и проверили более 740 экранов сценариев</p>
+
+        <div class="case-text">
+          <p><strong style="color:#fff;">Проблема.</strong> Запуск тёмной темы требовал не просто заменить цвета в дизайн-макетах. В существующем приложении уже были сотни экранов, использовавших старые цветовые токены. Нужно было понять масштаб проблемы, определить правила замены и убедиться, что после миграции интерфейс не сломается визуально или функционально.</p>
+        </div>
+
+        <div class="case-stats-strip case-stats-strip--4">
+          <div class="case-stat case-stat--blue">
+            <span class="case-stat__num">740+</span>
+            <span class="case-stat__label">экранов проверено (iOS + Android)</span>
+          </div>
+          <div class="case-stat case-stat--purple">
+            <span class="case-stat__num">1 827</span>
+            <span class="case-stat__label">автоматических замен в коде</span>
+          </div>
+          <div class="case-stat case-stat--purple">
+            <span class="case-stat__num">346</span>
+            <span class="case-stat__label">ручных замен</span>
+          </div>
+          <div class="case-stat case-stat--green">
+            <span class="case-stat__num">35</span>
+            <span class="case-stat__label">багов пофиксили на регрессе</span>
+          </div>
+        </div>
+
+        <p class="case-section__subtitle" style="margin-top:36px;">Методология</p>
+        <div class="case-methodology">
+
+          <div class="method-card">
+            <div class="method-card__stack">
+              <div class="method-card__media">
+                <img src="images/dark-theme-auto-replace.png" alt="Автоматическая замена устаревших цветовых токенов на актуальные" class="method-card__img">
+              </div>
+            </div>
+            <p class="method-card__title">Автоматическая замена</p>
+            <p class="method-card__desc">Разработчик дизайн-системы запускал скрипт, который автоматически заменял устаревшие цвета на актуальные согласно заранее определённой схеме.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="method-card__stack">
+              <div class="method-card__media">
+                <img src="images/dark-theme-manual-check.png" alt="Таблица маппинга цветовых токенов для ручной проверки" class="method-card__img">
+              </div>
+            </div>
+            <p class="method-card__title">Ручная проверка</p>
+            <p class="method-card__desc">Автоматическая миграция не могла покрыть все случаи. Оставшиеся ситуации я разбирала вручную: находила устаревшие цвета, определяла корректный токен и проверяла визуальный результат.</p>
+          </div>
+
+          <div class="method-card">
+            <div class="method-card__stack">
+              <div class="method-card__media">
+                <img src="images/dark-theme-regression.png" alt="Сетка экранов приложения, проверенных на регрессе после миграции на Dark Theme" class="method-card__img">
+              </div>
+            </div>
+            <p class="method-card__title">Регресс</p>
+            <p class="method-card__desc">После миграции команда провела регрессионную проверку и исправила найденные баги.</p>
+          </div>
+        </div>
+
+        <!-- Before/After phone compare slider. Screens: images/compare-phone{1,2,3}-{before,after}.png -->
+        <div class="compare-block">
+          <div class="compare-block__labels">
+            <span class="compare-block__label">до обновления дизайн-системы</span>
+            <span class="compare-block__label">после обновления дизайн-системы</span>
+          </div>
+
+          <div class="compare">
+            <div class="compare__divider"><span class="compare__handle"></span></div>
+
+            <!-- Phone 1 -->
+            <div class="phone">
+              <div class="phone__inner">
+                <div class="phone__notch"></div>
+                <div class="phone__screen phone__screen--before phone__screen--photo">
+                  <img src="images/compare-phone1-before.png" alt="Экран платежей и переводов до обновления дизайн-системы, светлая тема" class="phone__screen-img" draggable="false">
+                </div>
+                <div class="phone__screen phone__screen--after phone__screen--photo">
+                  <img src="images/compare-phone1-after.png" alt="Экран «Платежи» после обновления на тёмную тему" class="phone__screen-img" draggable="false">
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone 2 -->
+            <div class="phone">
+              <div class="phone__inner">
+                <div class="phone__notch"></div>
+                <div class="phone__screen phone__screen--before phone__screen--photo">
+                  <img src="images/compare-phone2-before.png" alt="Экран дебетовой карты MTS Debit до обновления дизайн-системы, светлая тема" class="phone__screen-img" draggable="false">
+                </div>
+                <div class="phone__screen phone__screen--after phone__screen--photo">
+                  <img src="images/compare-phone2-after.png" alt="Экран МТС Деньги после обновления на тёмную тему" class="phone__screen-img" draggable="false">
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone 3 -->
+            <div class="phone">
+              <div class="phone__inner">
+                <div class="phone__notch"></div>
+                <div class="phone__screen phone__screen--before phone__screen--photo">
+                  <img src="images/compare-phone3-before.png" alt="Экран кредитной карты до обновления дизайн-системы, светлая тема" class="phone__screen-img" draggable="false">
+                </div>
+                <div class="phone__screen phone__screen--after phone__screen--photo">
+                  <img src="images/compare-phone3-after.png" alt="Экран «Кредитная карта МТС Деньги» после обновления на тёмную тему" class="phone__screen-img" draggable="false">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="compare-block__hint">Потяните за ползунок, чтобы сравнить интерфейс до и после</p>
+        </div>
+
+        <div class="case-takeaway">
+          <p class="case-takeaway__label">Итог</p>
+          <p class="case-takeaway__text">Внедрили тёмную тему в&nbsp;приложении банка без&nbsp;привлечения продуктовой разработки, которую не&nbsp;удавалось реализовать <span class="case-takeaway__accent">более 10&nbsp;лет</span></p>
+        </div>
+      </section>
+
+      <!-- 06. Итоги -->
+      <section class="impact" aria-label="Итоги">
+          <div class="impact-hero">
+            <div class="impact-hero__details">
+              <p class="impact-hero__caption">Макеты продуктового сценария из&nbsp;50&nbsp;экранов</p>
+              <p class="impact-hero__flow"><s class="impact-hero__before">22&nbsp;часа 3&nbsp;минуты</s> <span class="impact-hero__arrow">→</span> 6&nbsp;часов 58&nbsp;минут</p>
+            </div>
+            <div>
+              <p class="impact-hero__label">Дизайн быстрее на</p>
+              <p class="impact-hero__num">68,4%</p>
+            </div>
+          </div>
+
+          <div class="impact-grid">
+            <div class="impact-card">
+              <p class="impact-card__label">Adoption (команды)</p>
+              <div>
+                <p class="impact-card__num">4 → 32</p>
+                <p class="impact-card__sub">из&nbsp;42 (рост в&nbsp;8&nbsp;раз)</p>
+              </div>
+            </div>
+            <div class="impact-card">
+              <p class="impact-card__label">Проникновение в&nbsp;коде</p>
+              <div>
+                <p class="impact-card__num">38–78%</p>
+                <p class="impact-card__sub">новые фичи — до&nbsp;78%</p>
+              </div>
+            </div>
+            <div class="impact-card">
+              <p class="impact-card__label">Сокращение Design Time</p>
+              <div>
+                <p class="impact-card__num">−29,2%</p>
+                <p class="impact-card__sub">с&nbsp;19,3 дня (2024) до&nbsp;13,87 дня (2025)</p>
+              </div>
+            </div>
+            <div class="impact-card">
+              <p class="impact-card__label">Разработка быстрее на</p>
+              <div>
+                <p class="impact-card__num">46,2%</p>
+                <p class="impact-card__sub">фича из&nbsp;20&nbsp;экранов: <s>86&nbsp;часов 31&nbsp;минута</s> → 46&nbsp;часов 33&nbsp;минуты</p>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- 07. Онбординг и библиотека знаний -->
+      <section class="case-block" id="onboarding">
+        <p class="case-section__eyebrow">Онбординг и библиотека знаний</p>
+        <h2 class="case-section__title case-section__title--fill">Как сделать ДС понятной новым дизайнерам</h2>
+
+        <div class="case-text">
+          <p>По мере роста дизайн-системы стало понятно, что одной документации недостаточно. Я создавала онбординги для новых дизайнеров, обучающие материалы и видео, которые помогали быстрее разобраться в принципах работы с ДС.</p>
+          <p>Отдельно я создала в банке Библиотеку знаний для дизайнеров — единое пространство с материалами, инструкциями и полезными ресурсами. Так дизайн-система постепенно становилась не только библиотекой компонентов, но и точкой входа в дизайн-процессы банка.</p>
+        </div>
+
+        <!-- MacBook mockup with the Knowledge Base screenshot -->
+        <figure class="macbook">
+          <div class="macbook__lid">
+            <span class="macbook__camera"></span>
+            <div class="macbook__screen">
+              <img src="images/knowledge-base.png" alt="Главная страница Библиотеки знаний ASTRA DS: гайды, дизайн-система и компоненты, бренды, UX-редактура" class="macbook__img js-zoomable" draggable="false">
+            </div>
+          </div>
+          <div class="macbook__base"><span class="macbook__notch"></span></div>
+        </figure>
+      </section>
+
+      <!-- 08. Демо -->
+      <section class="case-block" id="demo">
+        <p class="case-section__eyebrow">Демо</p>
+        <h2 class="case-section__title">Регулярное демо показывает ценность дизайн-системы</h2>
+
+        <div class="case-text">
+          <p>Я хотела, чтобы команда дизайн-системы воспринималась не как «ребята, которые приходят проверить макеты», а как команда, к которой хочется обращаться. Поэтому я много внимания уделяла внутренним демо.</p>
+          <p>Каждое демо я превращала в небольшую историю: придумывала отдельную визуальную концепцию, оформляла презентацию в определённой тематике и старалась сделать её не только информативной, но и эмоциональной.</p>
+        </div>
+
+        <!-- Demo presentations: one tab = one presentation, each with its own slideshow.
+             Слайды: images/demo-N-slide-M.png. Чтобы добавить слайд — ещё один .slide с <img class="slide__img">,
+             точки и счётчик подстроятся сами.
+             TODO: переименовать табы (сейчас «Демо #1–3»). -->
+        <div class="demo">
+          <div class="demo-tabs" role="tablist" aria-label="Презентации демо">
+            <button class="demo-tab is-active" role="tab" aria-selected="true" aria-controls="demo-panel-1" id="demo-tab-1">Демо #1</button>
+            <button class="demo-tab" role="tab" aria-selected="false" aria-controls="demo-panel-2" id="demo-tab-2" tabindex="-1">Демо #2</button>
+            <button class="demo-tab" role="tab" aria-selected="false" aria-controls="demo-panel-3" id="demo-tab-3" tabindex="-1">Демо #3</button>
+          </div>
+
+          <div class="demo-panel" role="tabpanel" id="demo-panel-1" aria-labelledby="demo-tab-1">
+            <div class="slideshow">
+              <div class="slideshow__track">
+                <div class="slide"><img src="images/demo-1-slide-1.png" alt="Демо #1, слайд 1: New Status Icons, видео в шапке Promo Screen, библиотека иллюстраций Fintech, Icon Button, рефакторинг Banner Sticker" class="slide__img" draggable="false"></div>
+                <div class="slide"><img src="images/demo-1-slide-2.png" alt="Демо #1, слайд 2: Sticker Banner — сравнение As Is и To Be на экране «Ещё»" class="slide__img" draggable="false"></div>
+                <div class="slide"><img src="images/demo-1-slide-3.png" alt="Демо #1, слайд 3: видео в шапке Promo Screen и инструкция для Android" class="slide__img" draggable="false"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-panel" role="tabpanel" id="demo-panel-2" aria-labelledby="demo-tab-2" hidden>
+            <div class="slideshow">
+              <div class="slideshow__track">
+                <div class="slide"><img src="images/demo-2-slide-1.png" alt="Демо #2, слайд 1: обзор обновлений ASTRA DS — Библиотека знаний, Attach &amp; File, Accordion, Навбар, Toolbar, Popover, Claude Code AI" class="slide__img" draggable="false"></div>
+                <div class="slide"><img src="images/demo-2-slide-2.png" alt="Демо #2, слайд 2: обновление навбара в App и Web — новые отступы, тень по умолчанию, высота 68px" class="slide__img" draggable="false"></div>
+                <div class="slide"><img src="images/demo-2-slide-3.png" alt="Демо #2, слайд 3: App Popover — центрирование хвостика подсказки, Web Toolbar, App Accordion с кастомным контентом в Title" class="slide__img" draggable="false"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="demo-panel" role="tabpanel" id="demo-panel-3" aria-labelledby="demo-tab-3" hidden>
+            <div class="slideshow">
+              <div class="slideshow__track">
+                <div class="slide"><img src="images/demo-3-slide-1.png" alt="Демо #3, слайд 1: новые компоненты на слотах, видео-гайды для компонентов, анимированные Lottie-иконки, обновление системных компонентов, правки в компонентах" class="slide__img" draggable="false"></div>
+                <div class="slide"><img src="images/demo-3-slide-2.png" alt="Демо #3, слайд 2: видео-гайды для компонентов — Backgrounds, Accordion, Banner Promo, Banner Sticker; смотреть прямо в Figma или в МТС Линк" class="slide__img" draggable="false"></div>
+                <div class="slide"><img src="images/demo-3-slide-3.png" alt="Демо #3, слайд 3: обновление системных элементов — Main Screen, OTP Screen, Tabbar, Navbar, Keyboard Transfer, Alert и другие" class="slide__img" draggable="false"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-text" style="margin-top:32px;">
+          <p>После демо я&nbsp;регулярно получала обратную связь от&nbsp;дизайнеров: они отмечали, что демо дизайн-системы — одни из&nbsp;самых полезных и&nbsp;самых «душевных» внутренних мероприятий.</p>
+        </div>
+
+        <figure class="demo-feedback">
+          <img src="images/demo-feedback.png" alt="Отзывы дизайнеров после демо: «Снова крутое демо!», «Приятно всегда слушать твои демо», «Как всегда с восторгом смотрю выступления команды дизайн-системы»" class="demo-feedback__img" draggable="false">
+        </figure>
+      </section>
+
+      <!-- 09. Мои сильные стороны -->
+      <section class="case-block strengths">
+        <div class="strengths__head">
+          <p class="case-section__eyebrow">Обо мне</p>
+          <h2 class="case-section__title">Люблю наводить порядок и&nbsp;помогать людям</h2>
+          <p class="strengths__subtitle">Мне нравится делать сложные вещи понятнее — для&nbsp;системы, команды и&nbsp;человека</p>
+        </div>
+
+        <div class="strengths__layout">
+          <figure class="strengths__photo">
+            <img src="images/portrait.jpg" alt="Анастасия Ясинская" class="strengths__photo-img" draggable="false">
+          </figure>
+
+          <div class="strengths__grid">
+            <article class="strength-card strength-card--lilac">
+              <span class="strength-card__emoji" aria-hidden="true">🫶</span>
+              <h3 class="strength-card__title">Помогаю людям</h3>
+              <p class="strength-card__text">Мне нравится делиться знаниями, отвечать на&nbsp;вопросы и&nbsp;создавать инструменты, которыми другим действительно удобно пользоваться.</p>
+            </article>
+            <article class="strength-card strength-card--sky">
+              <span class="strength-card__emoji" aria-hidden="true">🧩</span>
+              <h3 class="strength-card__title">Структурирую хаос</h3>
+              <p class="strength-card__text">Люблю находить порядок там, где много разрозненных решений, правил и&nbsp;исключений.</p>
+            </article>
+            <article class="strength-card strength-card--mint">
+              <span class="strength-card__emoji" aria-hidden="true">🔎</span>
+              <h3 class="strength-card__title">Ищу точки роста</h3>
+              <p class="strength-card__text">Нахожу боли в&nbsp;процессах и&nbsp;превращаю их в&nbsp;конкретные улучшения для&nbsp;команды и&nbsp;продукта.</p>
+            </article>
+            <article class="strength-card strength-card--peach">
+              <span class="strength-card__emoji" aria-hidden="true">🛠️</span>
+              <h3 class="strength-card__title">Делаю руками</h3>
+              <p class="strength-card__text">Люблю не&nbsp;только проектировать, но&nbsp;и&nbsp;разбираться в&nbsp;реализации, коде и&nbsp;технических ограничениях.</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Отзывы коллег (из внутренней системы оценки, 2026) -->
+        <div class="reviews" id="reviews">
+          <div class="reviews__head">
+            <h3 class="reviews__title">Что говорят коллеги</h3>
+            <div class="reviews__nav">
+              <button class="reviews__btn reviews__btn--prev" aria-label="Предыдущие отзывы">←</button>
+              <button class="reviews__btn reviews__btn--next" aria-label="Следующие отзывы">→</button>
+            </div>
+          </div>
+
+          <div class="reviews__grid" tabindex="0" aria-label="Отзывы коллег">
+            <figure class="review review--lilac">
+              <blockquote class="review__text">Настя ценнейшая часть команды. Первоклассный специалист. Понимает команду с&nbsp;полуслова. Делает огромные по&nbsp;объему задачи с&nbsp;<mark>фантастическим качеством</mark>. На&nbsp;Настю всегда можно положиться, очень ее&nbsp;ценю.</blockquote>
+              <figcaption class="review__author">
+                <span class="review__avatar">АН</span>
+                <span><span class="review__name">Александр Никулин</span><span class="review__role">Директор департамента продуктового дизайна</span></span>
+              </figcaption>
+            </figure>
+
+            <figure class="review review--sky">
+              <blockquote class="review__text">Настя очень классный специалист, мастер своего дела! Очень здорово получается коммуницировать и&nbsp;достигать высоких совместных результатов в&nbsp;нашей команде! Отдает качественно проработанные спецификации дизайн макетов, проводит <mark>pixel perfect ревью</mark>, оперативно реагирует на&nbsp;необходимые доработки макетов, проявляет готовность к&nbsp;компромиссу при ограничениях платформы Android. Всегда готова изучать что-то новое, удивлять коллег дополнительными активностями вроде адвент календаря. Спасибо Насте за&nbsp;огромный вклад в&nbsp;развитие дизайн системы банка!</blockquote>
+              <figcaption class="review__author">
+                <span class="review__avatar">ИЧ</span>
+                <span><span class="review__name">Илья Чистяков</span><span class="review__role">Старший Android-разработчик</span></span>
+              </figcaption>
+            </figure>
+
+            <figure class="review review--peach">
+              <blockquote class="review__text">Настя — замечательный дизайнер, <mark>настоящая звезда дизайн-системы</mark>! Помимо качественного выполнения своих задач, она всегда показывает класс на&nbsp;демо дизайна, демонстрируя навыки хорошей подачи материала и&nbsp;идеально выполненных презентаций, которые, на&nbsp;мой взгляд, служат источником вдохновения для&nbsp;всего департамента. Всегда очень интересно наблюдать как&nbsp;за&nbsp;развитием компонентов, так и&nbsp;за&nbsp;тем, как&nbsp;их презентуют. Рада быть в&nbsp;одной команде и&nbsp;вдохновляться твоей работой вместе со всеми!</blockquote>
+              <figcaption class="review__author">
+                <span class="review__avatar">АШ</span>
+                <span><span class="review__name">Александра Шушина</span><span class="review__role">Ведущий продуктовый дизайнер, Платежи и переводы</span></span>
+              </figcaption>
+            </figure>
+
+            <figure class="review review--mint">
+              <blockquote class="review__text">Настя — большой профессионал своего дела. По&nbsp;работе мы&nbsp;часто пересекаемся и&nbsp;могу сказать, что&nbsp;она выполняет свою работу блестяще. Более того, Настя очень активная и&nbsp;предлагает множество крутых фич и&nbsp;идей, очень детально всё прорабатывает и&nbsp;доводит до&nbsp;релиза, <mark>делая жизнь всех дизайнеров банка гораздо удобнее</mark> и&nbsp;комфортнее. Благодаря Насте появляется много улучшений в&nbsp;дизайн-системе и&nbsp;в&nbsp;целом в&nbsp;макетах. Отдельно хочется отметить очень важные для&nbsp;работы в&nbsp;команде скиллы — эмпатия, позитивный настрой, умение слышать коллег, уважение и&nbsp;помощь, когда это&nbsp;необходимо. Очень рад работать с&nbsp;таким прекрасным человеком и&nbsp;настоящим профессионалом, который всегда старается делать лучше и&nbsp;свою работу, и&nbsp;своих коллег.</blockquote>
+              <figcaption class="review__author">
+                <span class="review__avatar">АТ</span>
+                <span><span class="review__name">Александр Ташлыков</span><span class="review__role">Ведущий продуктовый дизайнер, Онлайн-каналы</span></span>
+              </figcaption>
+            </figure>
+
+            <figure class="review review--lilac">
+              <blockquote class="review__text">Настя очень крутая: собрала редакторам библиотеку шаблонов по&nbsp;всем форматам коммуникаций. Это&nbsp;не&nbsp;совсем её&nbsp;задача, <mark>она нам бескорыстно помогла</mark>: сами мы&nbsp;бы делали гораздо дольше и&nbsp;не&nbsp;так качественно. Мы&nbsp;очень благодарны, потому что&nbsp;это&nbsp;сильно упрощает и&nbsp;ускоряет работу над задачами. В&nbsp;процессе Настя прислушивалась к&nbsp;обратной связи, очень оперативно что-то добавляла/правила, участвовала в&nbsp;обучении редакторов. В&nbsp;общем, радостно работать с&nbsp;неравнодушными коллегами.</blockquote>
+              <figcaption class="review__author">
+                <span class="review__avatar">ЕТ</span>
+                <span><span class="review__name">Евгения Теленкова</span><span class="review__role">Руководитель центра редактуры и коммуникаций</span></span>
+              </figcaption>
+            </figure>
+
+            <figure class="review review--sky">
+              <blockquote class="review__text">Работать и&nbsp;общаться с&nbsp;Настей — одно удовольствие. Настя всегда превосходит все твои ожидания и&nbsp;<mark>решает задачу не&nbsp;на&nbsp;100, а&nbsp;на&nbsp;200%</mark>, не&nbsp;останавливаясь на&nbsp;просто «хорошем результате», а&nbsp;предлагая идеи как&nbsp;сделать лучше. Жаль, что&nbsp;у&nbsp;нас не&nbsp;так много совместных задач, но&nbsp;когда мне удается поработать с&nbsp;Настей вместе, это&nbsp;всегда одни из&nbsp;лучших рабочих моментов)</blockquote>
+              <figcaption class="review__author">
+                <span class="review__avatar">АК</span>
+                <span><span class="review__name">Анна Кушнарева</span><span class="review__role">Руководитель направления UX-редактуры</span></span>
+              </figcaption>
+            </figure>
+
+            <figure class="review review--peach">
+              <blockquote class="review__text">Хочу отметить, что работа Анастасии в&nbsp;рамках нашей дизайн-системы заслуживает искреннего восхищения. Она не&nbsp;только обладает превосходной экспертизой, но&nbsp;и&nbsp;умеет <mark>удивительно быстро находить идеальные дизайнерские решения</mark> даже в&nbsp;условиях сжатых сроков. Благодаря её&nbsp;открытости и&nbsp;доброжелательности общаться с&nbsp;ней — одно удовольствие: она всегда идёт навстречу, терпеливо выслушивает все идеи и&nbsp;даёт подробную обратную связь. Кроме того, оперативная реакция на&nbsp;любые запросы значительно ускоряет рабочий процесс, а&nbsp;её&nbsp;детальное видение дизайна помогает создавать по-настоящему качественные и&nbsp;эстетичные продукты. Благодаря Анастасии наша дизайн-система стала более цельной, удобной для&nbsp;всех участников процесса и&nbsp;вдохновляющей на&nbsp;дальнейшие креативные решения.</blockquote>
+              <figcaption class="review__author">
+                <span class="review__avatar">НМ</span>
+                <span><span class="review__name">Никита Макаревич</span><span class="review__role">Старший iOS-разработчик</span></span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Закрыть">&times;</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
